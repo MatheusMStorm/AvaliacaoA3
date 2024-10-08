@@ -8,7 +8,7 @@
     "git-commit-msg-linter": "^5.0.8"
   },
   "name": "avaliacaoa3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "ansi-styles": "^3.2.1",
