@@ -8,7 +8,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     needs: validate
-    if: ${{ sucess() }}
+    if: ${{ success() }}
     
     steps:
       - name: Checkout
