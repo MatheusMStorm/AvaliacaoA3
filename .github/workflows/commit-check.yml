@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  validate:
     name: Conventional Commits
     runs-on: ubuntu-latest
     steps:
