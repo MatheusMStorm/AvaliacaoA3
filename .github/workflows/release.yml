@@ -1,20 +1,36 @@
 name: Release
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  release:
-    name: Release
+  checkout:
     runs-on: ubuntu-latest
-    needs: validate
-    if: ${{ success() }}
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+  validate:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
+      - uses: webiny/action-conventional-commits@v1.3.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: validate
+    if: ${{ success() }}
+
+    steps:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
