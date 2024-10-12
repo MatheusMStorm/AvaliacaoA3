@@ -7,3 +7,4 @@ Projeto referente à avaliação A3 da matéria de Engenharia de Software que co
 ![JavaScript](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-black?style=for-the-badge&logo=postgresql&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-black?style=for-the-badge&logo=jest&logoColor=white)
