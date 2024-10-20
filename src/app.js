@@ -1,17 +1,24 @@
 require("dotenv").config();
 
-const port = process.env.PORT;
-
 const express = require('express');
-const db = require('./controllers/conexao.js');
+const db = require('./config/conexao.js');
+const criancaRoutes = require('./routes/criancaRoutes.js');
+const responsavelRoutes = require('./routes/responsavelRoutes.js');
+const instrutorRoutes = require('./routes/instrutorRoutes.js');
+const turmaRoutes = require('./routes/turmaRoutes.js');
+const matriculaRoutes = require('./routes/matriculaRoutes.js');
+
 const app = express();
+const port = process.env.PORT;
 
 app.use(express.json());
 
-app.get('/', (req, res) => res.json({ message: "Funcionando!" }));
-app.get('/criancas', async (req, res) => { 
-    const criancas = await db.selecionaCriancas();
-    res.json(criancas);
-})
-app.listen(port);
-console.log('API rodando');
+app.use('/', criancaRoutes);
+app.use('/', responsavelRoutes);
+app.use('/', instrutorRoutes);
+app.use('/', turmaRoutes);
+app.use('/', matriculaRoutes);
+
+app.listen(port, () => {
+    console.log('API rodando na porta ' + port);
+});
