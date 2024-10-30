@@ -9,3 +9,5 @@ Projeto referente à avaliação A3 da matéria de Engenharia de Software que co
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-black?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Jest](https://img.shields.io/badge/Jest-black?style=for-the-badge&logo=jest&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express&logoColor=white)
+![EJS](https://img.shields.io/badge/Ejs-black?style=for-the-badge&logo=ejs&logoColor=white)
+![CSS](https://img.shields.io/badge/css-black?style=for-the-badge&logo=css3&logoColor=white)
