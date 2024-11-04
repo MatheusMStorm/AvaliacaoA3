@@ -12,7 +12,7 @@ describe('Testes do modelo Responsavel', () => {
     test('getResponsaveis deve retornar uma lista de responsáveis', async () => {
     const mockRows = [
       { 
-        rg_responsavel: '12345',
+        rg_responsavel: '14667',
         nome_responsavel: 'Responsável A',
         endereco: 'Endereço A',
         graupa_responsavel: 'Grupo A',
@@ -28,7 +28,7 @@ describe('Testes do modelo Responsavel', () => {
 
   test('createResponsavel deve inserir e retornar um novo responsável', async () => {
     const novoResponsavel = {
-      rg_responsavel: '67890',
+      rg_responsavel: '6788',
       nome_responsavel: 'Responsável B',
       endereco: 'Endereço B',
       graupa_responsavel: 'Grupo B',
