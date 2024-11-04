@@ -28,7 +28,7 @@ describe('Testes do modelo Responsavel', () => {
 
   test('createResponsavel deve inserir e retornar um novo responsável', async () => {
     const novoResponsavel = {
-      rg_responsavel: '6788',
+      rg_responsavel: '67880',
       nome_responsavel: 'Responsável B',
       endereco: 'Endereço B',
       graupa_responsavel: 'Grupo B',
@@ -48,7 +48,7 @@ describe('Testes do modelo Responsavel', () => {
     expect(responsavel).toEqual(novoResponsavel);
     expect(pool.query).toHaveBeenCalledWith(
       'INSERT INTO projeto_iessa.responsavel (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      ['67890', 'Responsável B', 'Endereço B', 'Grupo B', 'RG da criança B']
+      ['67880', 'Responsável B', 'Endereço B', 'Grupo B', 'RG da criança B']
     );
   });
 });
