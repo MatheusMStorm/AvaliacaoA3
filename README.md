@@ -1,5 +1,11 @@
 # Avaliação A3 de Engenharia de Software - Sistema de Matrícula do Projeto IESSA
 
+![Github repo size](https://img.shields.io/github/languages/code-size/MatheusMStorm/AvaliacaoA3?style=for-the-badge)
+![Github language count](https://img.shields.io/github/languages/count/MatheusMStorm/AvaliacaoA3?style=for-the-badge)
+![Github forks](https://img.shields.io/github/forks/MatheusMStorm/AvaliacaoA3?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/MatheusMStorm/AvaliacaoA3?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/MatheusMStorm/AvaliacaoA3?style=for-the-badge)
+
 Projeto referente à avaliação A3 da matéria de Engenharia de Software que consiste em um sistema de matrícula para as aulas do Projeto IESSA, no Complexo Tenístico da Boca do Rio.
 
 ## Ferramentas utilizadas
