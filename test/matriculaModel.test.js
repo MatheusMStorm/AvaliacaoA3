@@ -1,4 +1,4 @@
-const { getMatricula, createMatricula } = require('../src/models/matriculaModel.js');
+const { getMatricula, createMatricula, getMatriculas } = require('../src/models/matriculaModel.js');
 const pool = require('../src/config/conexao.js');
 
 jest.mock('../src/config/conexao.js');
@@ -9,19 +9,19 @@ describe('Testes do modelo Matricula', () => {
     jest.clearAllMocks();
   });
 
-  test('getMatricula deve retornar uma lista de Matricula', async () => {
+  test('getMatriculas deve retornar uma lista de Matricula', async () => {
     const mockRows = [
-      { rg_crianca: '12345', id_turma: 'Turma A' },
+      { rg_crianca: '5664', id_turma: 'Turma A' },
     ];
     pool.query.mockResolvedValue({ rows: mockRows });
 
-    const matricula = await getMatricula();
+    const matricula = await getMatriculas();
     expect(matricula).toEqual(mockRows);
     expect(pool.query).toHaveBeenCalledWith('SELECT * FROM projeto_iessa.matricula');
   });
 
   test('createMatricula deve inserir e retornar uma nova Matricula', async () => {
-    const novaMatricula = { rg_crianca: '4564', id_turma: 'Turma B' };
+    const novaMatricula = { rg_crianca: '4565', id_turma: 'Turma B' };
     const mockResponse = { rows: [novaMatricula] };
     pool.query.mockResolvedValue(mockResponse);
 
