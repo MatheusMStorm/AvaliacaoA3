@@ -1,9 +1,9 @@
-const { getTurmas, createTurma } = require('../models/turmaModel.js');
+const { findTurmas, criarTurma } = require('../models/services/turmaService');
 
 const turmaController = {
   getTurmas: async (req, res) => {
     try {
-      const turmas = await getTurmas();
+      const turmas = await findTurmas();
       res.status(200).json(turmas);
     } catch (error) {
       console.error(error);
@@ -14,7 +14,7 @@ const turmaController = {
   createTurma: async (req, res) => {
     const { turno_turma, horario_turma, rg_instrutor } = req.body;
     try {
-      const novaTurma = await createTurma(turno_turma, horario_turma, rg_instrutor);
+      const novaTurma = await criarTurma(turno_turma, horario_turma, rg_instrutor);
       res.status(201).json(novaTurma);
     } catch (error) {
       console.error(error);

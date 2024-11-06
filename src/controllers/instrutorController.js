@@ -1,9 +1,9 @@
-const { getInstrutores, createInstrutor } = require('../models/instrutorModel.js');
+const { findInstrutores, criarInstrutor } = require('../models/services/instrutorService');
 
 const instrutorController = {
   getInstrutores: async (req, res) => {
     try {
-      const instrutores = await getInstrutores();
+      const instrutores = await findInstrutores();
       res.status(200).json(instrutores);
     } catch (error) {
       console.error(error);
@@ -14,7 +14,7 @@ const instrutorController = {
   createInstrutor: async (req, res) => {
     const { rg_instrutor, nome_instrutor } = req.body;
     try {
-      const novoInstrutor = await createInstrutor(rg_instrutor, nome_instrutor);
+      const novoInstrutor = await criarInstrutor(rg_instrutor, nome_instrutor);
       res.status(201).json(novoInstrutor);
     } catch (error) {
       console.error(error);

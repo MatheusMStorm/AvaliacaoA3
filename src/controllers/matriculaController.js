@@ -1,9 +1,9 @@
-const { getMatriculas, createMatricula } = require('../models/matriculaModel.js');
+const { findMatriculas, criarMatricula } = require('../models/services/matriculaService');
 
 const matriculaController = {
   getMatriculas: async (req, res) => {
     try {
-      const matriculas = await getMatriculas();
+      const matriculas = await findMatriculas();
       res.status(200).json(matriculas);
     } catch (error) {
       console.error(error);
@@ -14,7 +14,7 @@ const matriculaController = {
   createMatricula: async (req, res) => {
     const { rg_crianca, id_turma } = req.body;
     try {
-      const novaMatricula = await createMatricula(rg_crianca, id_turma);
+      const novaMatricula = await criarMatricula(rg_crianca, id_turma);
       res.status(201).json(novaMatricula);
     } catch (error) {
       console.error();
