@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const express = require('express');
-const db = require('./config/conexao.js');
 const criancaRoutes = require('./routes/criancaRoutes.js');
 const responsavelRoutes = require('./routes/responsavelRoutes.js');
 const instrutorRoutes = require('./routes/instrutorRoutes.js');

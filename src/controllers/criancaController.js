@@ -1,9 +1,9 @@
-const { getCriancas, createCrianca } = require('../models/criancaModel.js');
+const { findCriancas, criarCrianca } = require('../models/services/criancaService.js');
 
 const criancaController = {
   getCriancas: async (req, res) => {
     try {
-      const criancas = await getCriancas();
+      const criancas = await findCriancas();
       res.status(200).json(criancas);
     } catch (error) {
       console.error(error);
@@ -14,7 +14,7 @@ const criancaController = {
   createCrianca: async (req, res) => {
     const { rg_crianca, nome_crianca, idade_crianca, data_nasc } = req.body;
     try {
-      const novaCrianca = await createCrianca(rg_crianca, nome_crianca, idade_crianca, data_nasc);
+      const novaCrianca = await criarCrianca(rg_crianca, nome_crianca, idade_crianca, data_nasc);
       res.status(201).json(novaCrianca);
     } catch (error) {
       console.error(error);
