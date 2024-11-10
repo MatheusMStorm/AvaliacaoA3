@@ -1,4 +1,4 @@
-const { findMatriculas, criarMatricula } = require('../models/services/matriculaService');
+const { findMatriculas, criarMatricula, verificarCadastro } = require('../models/services/matriculaService');
 
 const matriculaController = {
   getMatriculas: async (req, res) => {
@@ -13,6 +13,11 @@ const matriculaController = {
 
   createMatricula: async (req, res) => {
     const { rg_crianca, id_turma } = req.body;
+    const criancaExiste = await verificarCadastro(rg_crianca);
+
+    if (!criancaExiste) {
+      throw new Error('Criança não cadastrada.')
+    }
     try {
       const novaMatricula = await criarMatricula(rg_crianca, id_turma);
       res.status(201).json(novaMatricula);

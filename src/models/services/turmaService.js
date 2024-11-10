@@ -5,8 +5,8 @@ const findTurmas = async () => {
     return turma;
   };
   
-  const criarTurma = async (rg_crianca, id_turma) => {
-    let turma = await createTurma(rg_crianca, id_turma);
+  const criarTurma = async (turno_turma, horario_turma, rg_instrutor) => {
+    let turma = await createTurma(turno_turma, horario_turma, rg_instrutor);
     return turma;
   };
   

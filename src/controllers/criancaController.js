@@ -1,4 +1,4 @@
-const { findCriancas, criarCrianca } = require('../models/services/criancaService.js');
+const { findCriancas, criarCrianca, verificarIdade } = require('../models/services/criancaService.js');
 
 const criancaController = {
   getCriancas: async (req, res) => {
@@ -13,6 +13,8 @@ const criancaController = {
 
   createCrianca: async (req, res) => {
     const { rg_crianca, nome_crianca, idade_crianca, data_nasc } = req.body;
+
+    verificarIdade(idade_crianca, res);
     try {
       const novaCrianca = await criarCrianca(rg_crianca, nome_crianca, idade_crianca, data_nasc);
       res.status(201).json(novaCrianca);

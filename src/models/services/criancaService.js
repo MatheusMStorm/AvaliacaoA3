@@ -10,4 +10,10 @@ const criarCrianca = async (rg_crianca, nome_crianca, idade_crianca, data_nasc) 
   return crianca;
 };
 
-module.exports = { findCriancas, criarCrianca };
+const verificarIdade = async (idade_crianca, res) => {
+  if (idade_crianca < 7 || idade_crianca > 17) {
+    return res.status(400).json({ error: "A idade do aluno deve estar entre 7 e 17 anos."});
+  }
+}
+
+module.exports = { findCriancas, criarCrianca, verificarIdade };
