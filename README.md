@@ -17,3 +17,11 @@ Projeto referente à avaliação A3 da matéria de Engenharia de Software que co
 ![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express&logoColor=white)
 ![EJS](https://img.shields.io/badge/Ejs-black?style=for-the-badge&logo=ejs&logoColor=white)
 ![CSS](https://img.shields.io/badge/css-black?style=for-the-badge&logo=css3&logoColor=white)
+
+## Contribuidores
+
+Essas são as pessoas que contribuiram com o projeto:
+
+<a href="https://github.com/MatheusMStorm/AvaliacaoA3/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=MatheusMStorm/AvaliacaoA3" />
+</a>
