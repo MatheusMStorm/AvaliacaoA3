@@ -5,8 +5,8 @@ const findResponsaveis = async () => {
     return responsavel;
   };
   
-  const criarResponsavel = async (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca) => {
-    let responsavel = await createResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca);
+  const criarResponsavel = async (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha) => {
+    let responsavel = await createResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha);
     return responsavel;
   };
   

@@ -16,6 +16,11 @@ const createMatricula = async (rg_crianca, id_turma) => {
     'INSERT INTO projeto_iessa.matricula (rg_crianca, id_turma) VALUES ($1, $2) RETURNING *',
     [rg_crianca, id_turma]
   );
+
+  await pool.query(
+    'UPDATE projeto_iessa.turma SET numero_alunos = numero_alunos + 1 WHERE id_turma = $1', [id_turma]
+  );
+
   let matricula = new Matricula(rg_crianca, id_turma);
   return matricula;
 };

@@ -25,6 +25,7 @@ const createCrianca = async (rg_crianca, nome_crianca, idade_crianca, data_nasc)
       'INSERT INTO projeto_iessa.crianca (rg_crianca, nome_crianca, idade_crianca, data_nasc) VALUES ($1, $2, $3, $4) RETURNING *',
       [rg_crianca, nome_crianca, idade_crianca, data_nasc]
     );
+
     let crianca = new Crianca(rg_crianca, nome_crianca, idade_crianca, data_nasc)
     return crianca;
 };

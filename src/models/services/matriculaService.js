@@ -1,4 +1,3 @@
-const { get } = require('underscore');
 const { getMatriculas, createMatricula } = require('../../infra/matriculaBd');
 
 const findMatriculas = async () => {

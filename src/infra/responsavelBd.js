@@ -11,12 +11,12 @@ const getResponsaveis = async () => {
     return responsaveis;
 };
 
-const createResponsavel = async (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca) => {
+const createResponsavel = async (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha) => {
     const res = await pool.query(
-        'INSERT INTO projeto_iessa.responsavel (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-        [rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca]
+        'INSERT INTO projeto_iessa.responsavel (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+        [rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha]
     );
-    let responsavel = new Responsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca);
+    let responsavel = new Responsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha);
     return responsavel;
 };
 

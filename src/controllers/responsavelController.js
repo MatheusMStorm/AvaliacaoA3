@@ -12,9 +12,9 @@ const responsavelController = {
   },
 
   createResponsavel: async (req, res) => {
-    const { rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca } = req.body;
+    const { rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha } = req.body;
     try {
-      const novoResponsavel = await criarResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca);
+      const novoResponsavel = await criarResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha);
       res.status(201).json(novoResponsavel);
     } catch (error) {
       console.error(error);
