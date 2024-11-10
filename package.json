@@ -26,6 +26,7 @@
     "has-flag": "^3.0.0",
     "levenshtein": "^1.0.5",
     "pg": "^8.13.0",
+    "supertest": "^7.0.0",
     "supports-color": "^5.5.0",
     "underscore": "^1.13.7"
   },
