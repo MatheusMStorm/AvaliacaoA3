@@ -53,6 +53,13 @@
         }
       ],
       "@semantic-release/github"
-    ]
+    ],
+    "npm": {
+      "publish": true,
+      "verifyConditions": [
+        "@semantic-release/npm"
+      ],
+      "skipPublish": false
+    }
   }
 }
