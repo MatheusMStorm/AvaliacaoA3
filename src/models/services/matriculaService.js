@@ -6,8 +6,12 @@ const findMatriculas = async () => {
 };
 
 const criarMatricula = async (rg_crianca, id_turma) => {
-  let matricula = await createMatricula(rg_crianca, id_turma);
-  return matricula;
+
+  const quantidadeAlunos = await getQuantidadeAlunosNaTurma(id_turma);
+  if (quantidadeAlunos >= 20) {
+    throw new Error('A turma já atingiu o limite de 20 alunos.');
+  }
+  return await createMatricula(rg_crianca, id_turma);
 };
 
 const verificarCadastro = async (rg_crianca) => {
