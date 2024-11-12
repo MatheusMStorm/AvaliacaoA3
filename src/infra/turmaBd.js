@@ -17,7 +17,8 @@ const createTurma = async (turno_turma, horario_turma, rg_instrutor) => {
         [turno_turma, horario_turma, rg_instrutor]
     );
 
-    let turma = new Turma(turno_turma, horario_turma, rg_instrutor);
+    const { id_turma } = res.rows[0]
+    let turma = new Turma(id_turma, turno_turma, horario_turma, rg_instrutor);
     return turma;
 };
 

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,38 +80,38 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">const { getMatriculas, createMatricula } = require('../../infra/matriculaBd');
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span></td><td class="text"><pre class="prettyprint lang-js">const { getMatriculas, createMatricula } = require('../../infra/matriculaBd');
 &nbsp;
-const findMatriculas = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-  let matricula = <span class="cstat-no" title="statement not covered" >await getMatriculas();</span>
-<span class="cstat-no" title="statement not covered" >  return matricula;</span>
+const findMatriculas = async () =&gt; {
+  let matricula = await getMatriculas();
+  return matricula;
 };
 &nbsp;
-const criarMatricula = <span class="fstat-no" title="function not covered" >as</span>ync (rg_crianca, id_turma) =&gt; {
-  let matricula = <span class="cstat-no" title="statement not covered" >await createMatricula(rg_crianca, id_turma);</span>
-<span class="cstat-no" title="statement not covered" >  return matricula;</span>
+const criarMatricula = async (rg_crianca, id_turma) =&gt; {
+  let matricula = await createMatricula(rg_crianca, id_turma);
+  return matricula;
 };
 &nbsp;
-const verificarCadastro = <span class="fstat-no" title="function not covered" >as</span>ync (rg_crianca) =&gt; {
-  const { getCriancaByRg } = <span class="cstat-no" title="statement not covered" >require('../../infra/criancaBd')</span>
-<span class="cstat-no" title="statement not covered" >  return await getCriancaByRg(rg_crianca);</span>
+const verificarCadastro = async (rg_crianca) =&gt; {
+  const { getCriancaByRg } = require('../../infra/criancaBd')
+  return await getCriancaByRg(rg_crianca);
 }
 &nbsp;
 module.exports = { findMatriculas, criarMatricula, verificarCadastro };</pre></td></tr></table></pre>
@@ -121,7 +121,7 @@ module.exports = { findMatriculas, criarMatricula, verificarCadastro };</pre></t
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-11T23:31:31.937Z
+                at 2024-11-12T01:03:11.769Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,29 +95,29 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,7 +127,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
+<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
 const Crianca = require('../models/entity/crianca.js')
 &nbsp;
 const getCriancas = async () =&gt; {
@@ -140,13 +140,13 @@ const getCriancas = async () =&gt; {
     return criancas;    
 };
 &nbsp;
-const getCriancaByRg = <span class="fstat-no" title="function not covered" >as</span>ync (rg_crianca) =&gt; {
+const getCriancaByRg = async (rg_crianca) =&gt; {
     let crianca;
-    const res = <span class="cstat-no" title="statement not covered" >await pool.query('SELECT rg_crianca, nome_crianca, idade_crianca, data_nasc FROM projeto_iessa.crianca WHERE rg_crianca = $1', [rg_crianca]);</span>
-<span class="cstat-no" title="statement not covered" >    res.rows.forEach(<span class="fstat-no" title="function not covered" >ro</span>w =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        crianca = new Crianca(row.rg_crianca, row.nome_crianca, row.idade_crianca, row.data_nasc);</span>
+    const res = await pool.query('SELECT rg_crianca, nome_crianca, idade_crianca, data_nasc FROM projeto_iessa.crianca WHERE rg_crianca = $1', [rg_crianca]);
+    res.rows.forEach(row =&gt; {
+        crianca = new Crianca(row.rg_crianca, row.nome_crianca, row.idade_crianca, row.data_nasc);
     })
-<span class="cstat-no" title="statement not covered" >    return crianca;</span>
+    return crianca;
 }
 &nbsp;
 const createCrianca = async (rg_crianca, nome_crianca, idade_crianca, data_nasc) =&gt; {
@@ -166,7 +166,7 @@ module.exports = { getCriancas, getCriancaByRg, createCrianca };</pre></td></tr>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-11T23:31:31.937Z
+                at 2024-11-12T01:03:11.769Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

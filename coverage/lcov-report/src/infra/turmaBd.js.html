@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -86,50 +86,53 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
 const Turma = require('../models/entity/turma.js');
 &nbsp;
-const getTurmas = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-    let turmas = <span class="cstat-no" title="statement not covered" >[];</span>
-    const res = <span class="cstat-no" title="statement not covered" >await pool.query('SELECT turno_turma, horario_turma, rg_instrutor, numero_alunos FROM projeto_iessa.turma');</span>
-<span class="cstat-no" title="statement not covered" >    res.rows.forEach(<span class="fstat-no" title="function not covered" >ro</span>w =&gt; {</span>
-        let turma = <span class="cstat-no" title="statement not covered" >new Turma(row.turno_turma, row.horario_turma, row.rg_instrutor, row.numero_alunos);</span>
-<span class="cstat-no" title="statement not covered" >        turmas.push(turma);</span>
+const getTurmas = async () =&gt; {
+    let turmas = [];
+    const res = await pool.query('SELECT turno_turma, horario_turma, rg_instrutor, numero_alunos FROM projeto_iessa.turma');
+    res.rows.forEach(row =&gt; {
+        let turma = new Turma(row.turno_turma, row.horario_turma, row.rg_instrutor, row.numero_alunos);
+        turmas.push(turma);
     });
-<span class="cstat-no" title="statement not covered" >    return turmas;</span>
+    return turmas;
 };
 &nbsp;
-const createTurma = <span class="fstat-no" title="function not covered" >as</span>ync (turno_turma, horario_turma, rg_instrutor) =&gt; {
-    const res = <span class="cstat-no" title="statement not covered" >await pool.query(</span>
+const createTurma = async (turno_turma, horario_turma, rg_instrutor) =&gt; {
+    const res = await pool.query(
         'INSERT INTO projeto_iessa.turma (turno_turma, horario_turma, rg_instrutor) VALUES ($1, $2, $3) RETURNING *',
         [turno_turma, horario_turma, rg_instrutor]
     );
 &nbsp;
-    let turma = <span class="cstat-no" title="statement not covered" >new Turma(turno_turma, horario_turma, rg_instrutor);</span>
-<span class="cstat-no" title="statement not covered" >    return turma;</span>
+    const { id_turma } = res.rows[0]
+    let turma = new Turma(id_turma, turno_turma, horario_turma, rg_instrutor);
+    return turma;
 };
 &nbsp;
 module.exports = { getTurmas, createTurma };</pre></td></tr></table></pre>
@@ -139,7 +142,7 @@ module.exports = { getTurmas, createTurma };</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-11T23:31:31.937Z
+                at 2024-11-12T01:03:11.769Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

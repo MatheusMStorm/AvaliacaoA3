@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,58 +90,61 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span></td><td class="text"><pre class="prettyprint lang-js">const pool = require('../config/conexao.js');
 const Matricula = require('../models/entity/matricula.js')
 &nbsp;
-const getMatriculas = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-    let matriculas = <span class="cstat-no" title="statement not covered" >[];</span>
-    const res = <span class="cstat-no" title="statement not covered" >await pool.query('SELECT rg_crianca, id_turma FROM projeto_iessa.matricula');</span>
-<span class="cstat-no" title="statement not covered" >    res.rows.forEach(<span class="fstat-no" title="function not covered" >ro</span>w =&gt; {</span>
-        let matricula = <span class="cstat-no" title="statement not covered" >new Matricula(row.rg_crianca, row.id_turma);</span>
-<span class="cstat-no" title="statement not covered" >        matriculas.push(matricula);</span>
+const getMatriculas = async () =&gt; {
+    let matriculas = [];
+    const res = await pool.query('SELECT id_matricula, rg_crianca, id_turma FROM projeto_iessa.matricula');
+    res.rows.forEach(row =&gt; {
+        let matricula = new Matricula(row.id_matricula, row.rg_crianca, row.id_turma);
+        matriculas.push(matricula);
     });
-<span class="cstat-no" title="statement not covered" >    return matriculas;</span>
+    return matriculas;
 };
 &nbsp;
-const createMatricula = <span class="fstat-no" title="function not covered" >as</span>ync (rg_crianca, id_turma) =&gt; {
-  const res = <span class="cstat-no" title="statement not covered" >await pool.query(</span>
+const createMatricula = async (rg_crianca, id_turma) =&gt; {
+  const res = await pool.query(
     'INSERT INTO projeto_iessa.matricula (rg_crianca, id_turma) VALUES ($1, $2) RETURNING *',
     [rg_crianca, id_turma]
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  await pool.query(</span>
+  await pool.query(
     'UPDATE projeto_iessa.turma SET numero_alunos = numero_alunos + 1 WHERE id_turma = $1', [id_turma]
   );
 &nbsp;
-  let matricula = <span class="cstat-no" title="statement not covered" >new Matricula(rg_crianca, id_turma);</span>
-<span class="cstat-no" title="statement not covered" >  return matricula;</span>
+  const { id_matricula } = res.rows[0];
+  let matricula = new Matricula(id_matricula, rg_crianca, id_turma);
+  return matricula;
 };
 &nbsp;
 module.exports = { getMatriculas, createMatricula };</pre></td></tr></table></pre>
@@ -151,7 +154,7 @@ module.exports = { getMatriculas, createMatricula };</pre></td></tr></table></pr
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-11T23:31:31.937Z
+                at 2024-11-12T01:03:11.769Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.64% </span>
+                <span class="strong">70.58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/17</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.64% </span>
+                <span class="strong">70.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/17</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,29 +93,13 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -123,29 +107,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">const { findMatriculas, criarMatricula, verificarCadastro } = require('../models/services/matriculaService');
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span></td><td class="text"><pre class="prettyprint lang-js">const { findMatriculas, criarMatricula, verificarCadastro } = require('../models/services/matriculaService');
 &nbsp;
 const matriculaController = {
-  getMatriculas: <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const matriculas = <span class="cstat-no" title="statement not covered" >await findMatriculas();</span>
-<span class="cstat-no" title="statement not covered" >      res.status(200).json(matriculas);</span>
+  getMatriculas: async (req, res) =&gt; {
+    try {
+      const matriculas = await findMatriculas();
+      res.status(200).json(matriculas);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >      console.error(error);</span>
 <span class="cstat-no" title="statement not covered" >      res.status(500).json({ error: 'Erro ao obter lista de matrículas.' });</span>
     }
   },
 &nbsp;
-  createMatricula: <span class="fstat-no" title="function not covered" >as</span>ync (req, res) =&gt; {
-    const { rg_crianca, id_turma } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-    const criancaExiste = <span class="cstat-no" title="statement not covered" >await verificarCadastro(rg_crianca);</span>
+  createMatricula: async (req, res) =&gt; {
+    const { rg_crianca, id_turma } = req.body;
+    const criancaExiste = await verificarCadastro(rg_crianca);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!criancaExiste) {</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!criancaExiste) {
 <span class="cstat-no" title="statement not covered" >      throw new Error('Criança não cadastrada.')</span>
     }
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const novaMatricula = <span class="cstat-no" title="statement not covered" >await criarMatricula(rg_crianca, id_turma);</span>
-<span class="cstat-no" title="statement not covered" >      res.status(201).json(novaMatricula);</span>
+    try {
+      const novaMatricula = await criarMatricula(rg_crianca, id_turma);
+      res.status(201).json(novaMatricula);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >      console.error();</span>
 <span class="cstat-no" title="statement not covered" >      res.status(500).json({ error: 'Erro ao criar nova matrícula.' });</span>
@@ -160,7 +160,7 @@ module.exports = matriculaController;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-11T23:31:31.937Z
+                at 2024-11-12T01:03:11.769Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

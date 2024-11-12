@@ -3,9 +3,9 @@ const Matricula = require('../models/entity/matricula.js')
 
 const getMatriculas = async () => {
     let matriculas = [];
-    const res = await pool.query('SELECT rg_crianca, id_turma FROM projeto_iessa.matricula');
+    const res = await pool.query('SELECT id_matricula, rg_crianca, id_turma FROM projeto_iessa.matricula');
     res.rows.forEach(row => {
-        let matricula = new Matricula(row.rg_crianca, row.id_turma);
+        let matricula = new Matricula(row.id_matricula, row.rg_crianca, row.id_turma);
         matriculas.push(matricula);
     });
     return matriculas;
@@ -21,7 +21,8 @@ const createMatricula = async (rg_crianca, id_turma) => {
     'UPDATE projeto_iessa.turma SET numero_alunos = numero_alunos + 1 WHERE id_turma = $1', [id_turma]
   );
 
-  let matricula = new Matricula(rg_crianca, id_turma);
+  const { id_matricula } = res.rows[0];
+  let matricula = new Matricula(id_matricula, rg_crianca, id_turma);
   return matricula;
 };
 
