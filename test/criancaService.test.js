@@ -15,20 +15,26 @@ describe('Testes de Serviço de Criança', () => {
     ];
     criancaBd.getCriancas.mockResolvedValue(mockCriancas);
 
-    const result = await findCriancas();
-
-    expect(result).toEqual(mockCriancas);
-    expect(criancaBd.getCriancas).toHaveBeenCalledTimes(1);
+    try {
+      const result = await findCriancas();
+      expect(result).toEqual(mockCriancas);
+      expect(criancaBd.getCriancas).toHaveBeenCalledTimes(1);
+    } catch (error) {
+      throw new Error(`Erro ao buscar crianças: ${error.message}`);
+    }
   });
 
   test('deve criar uma nova criança e retornar os dados da criança criada', async () => {
     const mockCrianca = { rg_crianca: '34577898', nome_crianca: 'Luiza', idade_crianca: 10, data_nasc: '2013-05-01' };
     criancaBd.createCrianca.mockResolvedValue(mockCrianca);
 
-    const result = await criarCrianca('34577898', 'Luiza', 10, '2013-05-01');
-
-    expect(result).toEqual(mockCrianca);
-    expect(criancaBd.createCrianca).toHaveBeenCalledWith('34577898', 'Luiza', 10, '2013-05-01');
-    expect(criancaBd.createCrianca).toHaveBeenCalledTimes(1);
+    try {
+      const result = await criarCrianca('34577898', 'Luiza', 10, '2013-05-01');
+      expect(result).toEqual(mockCrianca);
+      expect(criancaBd.createCrianca).toHaveBeenCalledWith('34577898', 'Luiza', 10, '2013-05-01');
+      expect(criancaBd.createCrianca).toHaveBeenCalledTimes(1);
+    } catch (error) {
+      throw new Error(`Erro ao criar criança: ${error.message}`);
+    }
   });
 });

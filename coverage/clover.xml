@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1731373391805" clover="3.2.0">
-  <project timestamp="1731373391805" name="All files">
+<coverage generated="1731414292832" clover="3.2.0">
+  <project timestamp="1731414292832" name="All files">
     <metrics statements="270" coveredstatements="246" conditionals="6" coveredconditionals="4" methods="44" coveredmethods="43" elements="320" coveredelements="293" complexity="0" loc="270" ncloc="270" packages="7" files="27" classes="27"/>
     <package name="src">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -26,9 +26,9 @@
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="conexao.js" path="E:\Projetos\AvaliacaoA3\src\config\conexao.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
+        <line num="1" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
@@ -149,74 +149,74 @@
       </file>
       <file name="instrutorBd.js" path="E:\Projetos\AvaliacaoA3\src\infra\instrutorBd.js">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
       </file>
       <file name="matriculaBd.js" path="E:\Projetos\AvaliacaoA3\src\infra\matriculaBd.js">
         <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
-        <line num="29" count="5" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
       </file>
       <file name="responsavelBd.js" path="E:\Projetos\AvaliacaoA3\src\infra\responsavelBd.js">
         <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
       </file>
       <file name="turmaBd.js" path="E:\Projetos\AvaliacaoA3\src\infra\turmaBd.js">
         <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.models.entity">
@@ -233,14 +233,14 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
       </file>
       <file name="matricula.js" path="E:\Projetos\AvaliacaoA3\src\models\entity\matricula.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
       </file>
       <file name="responsavel.js" path="E:\Projetos\AvaliacaoA3\src\models\entity\responsavel.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -250,16 +250,16 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
       </file>
       <file name="turma.js" path="E:\Projetos\AvaliacaoA3\src\models\entity\turma.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.models.services">
@@ -280,50 +280,50 @@
       </file>
       <file name="instrutorService.js" path="E:\Projetos\AvaliacaoA3\src\models\services\instrutorService.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
       </file>
       <file name="matriculaService.js" path="E:\Projetos\AvaliacaoA3\src\models\services\matriculaService.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
       </file>
       <file name="responsavelService.js" path="E:\Projetos\AvaliacaoA3\src\models\services\responsavelService.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
       </file>
       <file name="turmaService.js" path="E:\Projetos\AvaliacaoA3\src\models\services\turmaService.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
