@@ -23,11 +23,8 @@ const createTurma = async (turno_turma, horario_turma, rg_instrutor) => {
 };
 
 const contarAlunosNaTurma = async (id_turma) => {
-    const query = 'SELECT numero_alunos FROM turma WHERE id_turma = $1';
-    const values = [id_turma];
-  
     try {
-      const result = await db.query(query, values);
+      const result = await pool.query('SELECT numero_alunos FROM projeto_iessa.turma WHERE id_turma = $1', [id_turma]);
       if (result.rows.length > 0) {
         return result.rows[0].numero_alunos;
       }

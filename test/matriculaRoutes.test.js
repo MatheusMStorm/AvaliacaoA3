@@ -20,14 +20,14 @@ describe('Testes de Integração para Rotas de Matrícula', () => {
         try {
             const novaMatricula = {
                 rg_crianca: "60606060",
-                id_turma: 6
+                id_turma: 7
             };
             const response = await request(app).post('/api/matriculas').send(novaMatricula);
             
-            console.log("Resposta da criação de matrícula:", response.body);  // Log para ver o conteúdo da resposta
+            console.log("Resposta da criação de matrícula:", response.body); 
             
             expect(response.status).toBe(201);
-            expect(response.body.id_turma).toBe(6);
+            expect(response.body.id_turma).toBe(7);
 
             idMatricula = response.body.id_matricula;
             expect(idMatricula).toBeDefined();
