@@ -1,4 +1,4 @@
-const { findResponsaveis, criarResponsavel } = require('../models/services/responsavelService');
+const { findResponsaveis, criarResponsavel, verificarSenha } = require('../models/services/responsavelService');
 
 const responsavelController = {
   getResponsaveis: async (req, res) => {
@@ -13,6 +13,8 @@ const responsavelController = {
 
   createResponsavel: async (req, res) => {
     const { rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha } = req.body;
+
+    verificarSenha(senha, res);
     try {
       const novoResponsavel = await criarResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha);
       res.status(201).json(novoResponsavel);

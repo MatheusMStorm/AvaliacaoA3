@@ -1,4 +1,4 @@
-const { getTurmas, createTurma } = require('../../infra/turmaBd');
+const { getTurmas, createTurma, contarAlunosNaTurma } = require('../../infra/turmaBd');
 
 const findTurmas = async () => {
     let turma = await getTurmas();
@@ -12,7 +12,7 @@ const criarTurma = async (turno_turma, horario_turma, rg_instrutor) => {
 
 const getQuantidadeAlunosNaTurma = async (id_turma) => {
     try {
-      const quantidadeAlunos = await turmaBd.contarAlunosNaTurma(id_turma);
+      const quantidadeAlunos = await contarAlunosNaTurma(id_turma);
       return quantidadeAlunos;
     } catch (error) {
       throw new Error('Erro ao consultar a quantidade de alunos na turma: ' + error.message);
