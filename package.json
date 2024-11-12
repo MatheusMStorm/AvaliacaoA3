@@ -9,7 +9,7 @@
     "jest": "^29.7.0"
   },
   "name": "avaliacaoa3",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": "index.js",
   "dependencies": {
     "ansi-styles": "^3.2.1",
