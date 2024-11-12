@@ -22,4 +22,20 @@ const createTurma = async (turno_turma, horario_turma, rg_instrutor) => {
     return turma;
 };
 
-module.exports = { getTurmas, createTurma };
+const contarAlunosNaTurma = async (id_turma) => {
+    const query = 'SELECT numero_alunos FROM turma WHERE id_turma = $1';
+    const values = [id_turma];
+  
+    try {
+      const result = await db.query(query, values);
+      if (result.rows.length > 0) {
+        return result.rows[0].numero_alunos;
+      }
+      throw new Error('Turma não encontrada.');
+    } catch (error) {
+      console.error('Erro ao contar alunos na turma:', error);
+      throw error;
+    }
+  };
+
+module.exports = { getTurmas, createTurma, contarAlunosNaTurma };
