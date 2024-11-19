@@ -6,32 +6,22 @@ describe('Testes de Integração para Rotas de Instrutor', () => {
     const rgInstrutor = '1595424644';
 
     test('GET /api/instrutores deve retornar lista de instrutores', async () => {
-        try {
-            const response = await request(app).get('/api/instrutores');
-            expect(response.status).toBe(200);
-            expect(Array.isArray(response.body)).toBe(true);
-        } catch(error) {
-            console.error("Erro no teste de GET /api/instrutores:", error);
-            throw error;
-        }
+        const response = await request(app).get('/api/instrutores');
+        expect(response.status).toBe(200);
+        expect(Array.isArray(response.body)).toBe(true);
     });
 
     test('POST /api/instrutores deve criar uma novo Instrutor', async () => {
-        try {
-            const novoInstrutor = {
-                rg_instrutor: rgInstrutor,
-                nome_instrutor: 'Pablo',
-            };
-            const response = await request(app).post('/api/instrutores').send(novoInstrutor);
+        const novoInstrutor = {
+            rg_instrutor: rgInstrutor,
+            nome_instrutor: 'Pablo',
+        };
+        const response = await request(app).post('/api/instrutores').send(novoInstrutor);
 
-            console.log("Resposta da criação de instrutor: " + response.body);
+        console.log("Resposta da criação de instrutor: " + response.body);
 
-            expect(response.status).toBe(201);
-            expect(response.body.nome_instrutor).toBe('Pablo');
-        } catch(error) {
-            console.error("Erro no teste de POST /api/instrutores:", error);
-            throw error;
-        }
+        expect(response.status).toBe(201);
+        expect(response.body.nome_instrutor).toBe('Pablo');
     });
 
     afterEach(async () => {

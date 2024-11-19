@@ -15,26 +15,18 @@ describe('Testes de Serviço de Turma', () => {
     ];
     turmaBd.getTurmas.mockResolvedValue(mockTurmas);
 
-    try {
-      const result = await findTurmas();
-      expect(result).toEqual(mockTurmas);
-      expect(turmaBd.getTurmas).toHaveBeenCalledTimes(1);
-    } catch (error) {
-      throw new Error(`Erro ao buscar turmas: ${error.message}`);
-    }
+    const result = await findTurmas();
+    expect(result).toEqual(mockTurmas);
+    expect(turmaBd.getTurmas).toHaveBeenCalledTimes(1);
   });
 
   test('deve criar uma nova turma e retornar os dados da turma criada', async () => {
     const mockTurma = { turno_turma: 'Vespertino', horario_turma: '14:00', rg_instrutor: '22222' };
     turmaBd.createTurma.mockResolvedValue(mockTurma);
 
-    try {
-      const result = await criarTurma('Vespertino', '14:00', '22222');
-      expect(result).toEqual(mockTurma);
-      expect(turmaBd.createTurma).toHaveBeenCalledWith('Vespertino', '14:00', '22222');
-      expect(turmaBd.createTurma).toHaveBeenCalledTimes(1);
-    } catch (error) {
-      throw new Error(`Erro ao criar turma: ${error.message}`);
-    }
+    const result = await criarTurma('Vespertino', '14:00', '22222');
+    expect(result).toEqual(mockTurma);
+    expect(turmaBd.createTurma).toHaveBeenCalledWith('Vespertino', '14:00', '22222');
+    expect(turmaBd.createTurma).toHaveBeenCalledTimes(1);
   });
 });

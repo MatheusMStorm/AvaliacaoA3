@@ -14,8 +14,12 @@ const criancaController = {
   createCrianca: async (req, res) => {
     const { rg_crianca, nome_crianca, idade_crianca, data_nasc } = req.body;
 
-    verificarIdade(idade_crianca, res);
+    
     try {
+      await verificarIdade(idade_crianca, res);
+      if (res.headersSent) {
+        return;
+      }
       const novaCrianca = await criarCrianca(rg_crianca, nome_crianca, idade_crianca, data_nasc);
       res.status(201).json(novaCrianca);
     } catch (error) {

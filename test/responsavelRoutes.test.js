@@ -15,45 +15,30 @@ describe('Testes de Integração para Rotas de Responsável', () => {
 
 
     test('GET /api/responsaveis deve retornar lista de responsáveis', async () => {
-        try {
-            const response = await request(app).get('/api/responsaveis');
-            expect(response.status).toBe(200);
-            expect(Array.isArray(response.body)).toBe(true);
-        } catch (error) {
-            console.error("Erro no teste de GET /api/responsaveis:", error);
-            throw error;
-        }
+        const response = await request(app).get('/api/responsaveis');
+        expect(response.status).toBe(200);
+        expect(Array.isArray(response.body)).toBe(true);
     });
 
     test('POST /api/responsaveis deve criar um novo responsável', async () => {
-        try {
-            const novoResponsavel = {
-                rg_responsavel: rgResponsavel,
-                nome_responsavel: "Luiz", 
-                endereco: "Rua do Sol, 122", 
-                graupa_responsavel: "Pai",  
-                rg_crianca: rgCrianca, 
-                senha: "12345678",
-            };
-            const response = await request(app).post('/api/responsaveis').send(novoResponsavel);
-            
-            console.log("Resposta da criação de responsável:", response.body); 
-            
-            expect(response.status).toBe(201);
-            expect(response.body.nome_responsavel).toBe('Luiz');
-        } catch (error) {
-            console.error("Erro no teste de POST /api/responsaveis:", error);
-            throw error;
-        }
+        const novoResponsavel = {
+            rg_responsavel: rgResponsavel,
+            nome_responsavel: "Luiz",
+            endereco: "Rua do Sol, 122",
+            graupa_responsavel: "Pai",
+            rg_crianca: rgCrianca,
+            senha: "12345678",
+        };
+        const response = await request(app).post('/api/responsaveis').send(novoResponsavel);
+
+        console.log("Resposta da criação de responsável:", response.body);
+
+        expect(response.status).toBe(201);
+        expect(response.body.nome_responsavel).toBe('Luiz');
     });
 
     afterEach(async () => {
-        try {
-            await db.query('DELETE FROM projeto_iessa.responsavel WHERE rg_responsavel = $1', [rgResponsavel]);
-            await db.query('DELETE FROM projeto_iessa.crianca WHERE rg_crianca = $1', [rgCrianca]);
-        } catch (error) {
-            console.error("Erro ao limpar os dados após o teste:", error);
-            throw error;
-        }
+        await db.query('DELETE FROM projeto_iessa.responsavel WHERE rg_responsavel = $1', [rgResponsavel]);
+        await db.query('DELETE FROM projeto_iessa.crianca WHERE rg_crianca = $1', [rgCrianca]);
     });
 });

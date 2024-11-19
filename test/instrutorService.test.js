@@ -15,26 +15,18 @@ describe('Testes de Serviço de Instrutor', () => {
     ];
     instrutorBd.getInstrutores.mockResolvedValue(mockInstrutores);
 
-    try {
-      const result = await findInstrutores();
-      expect(result).toEqual(mockInstrutores);
-      expect(instrutorBd.getInstrutores).toHaveBeenCalledTimes(1);
-    } catch (error) {
-      throw new Error(`Erro ao buscar instrutores: ${error.message}`);
-    }
+    const result = await findInstrutores();
+    expect(result).toEqual(mockInstrutores);
+    expect(instrutorBd.getInstrutores).toHaveBeenCalledTimes(1);
   });
 
   test('deve criar um novo instrutor e retornar os dados do instrutor criado', async () => {
     const mockInstrutor = { rg_instrutor: "4444444", nome_instrutor: "Mário" };
     instrutorBd.createInstrutor.mockResolvedValue(mockInstrutor);
 
-    try {
-      const result = await criarInstrutor('4444444', 'Mário');
-      expect(result).toEqual(mockInstrutor);
-      expect(instrutorBd.createInstrutor).toHaveBeenCalledWith('4444444', 'Mário');
-      expect(instrutorBd.createInstrutor).toHaveBeenCalledTimes(1);
-    } catch (error) {
-      throw new Error(`Erro ao criar instrutor: ${error.message}`);
-    }
+    const result = await criarInstrutor('4444444', 'Mário');
+    expect(result).toEqual(mockInstrutor);
+    expect(instrutorBd.createInstrutor).toHaveBeenCalledWith('4444444', 'Mário');
+    expect(instrutorBd.createInstrutor).toHaveBeenCalledTimes(1);
   });
 });

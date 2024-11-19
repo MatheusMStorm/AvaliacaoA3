@@ -14,18 +14,19 @@ const matriculaController = {
   createMatricula: async (req, res) => {
     const { rg_crianca, id_turma } = req.body;
     const { getQuantidadeAlunosNaTurma } = require('../models/services/turmaService');
-    const criancaExiste = await verificarCadastro(rg_crianca);
-    const quantidadeAlunos = await getQuantidadeAlunosNaTurma(id_turma);
-
-    if (!criancaExiste) {
-      throw new Error('Criança não cadastrada.')
-    }
-
-    if (quantidadeAlunos >= 20) {
-      return res.status(400).json({ error: 'A turma já atingiu o limite de 20 alunos.' });
-    }
 
     try {
+      const criancaExiste = await verificarCadastro(rg_crianca);
+      const quantidadeAlunos = await getQuantidadeAlunosNaTurma(id_turma);
+
+      if (quantidadeAlunos >= 20) {
+        res.status(400).json({ error: 'A turma já atingiu o limite de 20 alunos.' });
+        return; 
+      } else if (!criancaExiste) {
+        res.status(404).json({ error: 'Criança não cadastrada.' });
+        return;
+      }
+
       const novaMatricula = await criarMatricula(rg_crianca, id_turma);
       res.status(201).json(novaMatricula);
     } catch (error) {
