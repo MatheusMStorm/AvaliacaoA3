@@ -31,7 +31,8 @@
     "underscore": "^1.13.7"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
