@@ -10,7 +10,7 @@
     "sonarqube-scanner": "^4.2.6"
   },
   "name": "avaliacaoa3",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "index.js",
   "dependencies": {
     "ansi-styles": "^6.2.1",
