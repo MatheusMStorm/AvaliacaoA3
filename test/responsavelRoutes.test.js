@@ -37,6 +37,23 @@ describe('Testes de Integração para Rotas de Responsável', () => {
         expect(response.body.nome_responsavel).toBe('Luiz');
     });
 
+    test('POST /api/responsaveis deve retornar um erro 400', async () => {
+        const novoResponsavel = {
+            rg_responsavel: rgResponsavel,
+            nome_responsavel: "Luiz",
+            endereco: "Rua do Sol, 122",
+            graupa_responsavel: "Pai",
+            rg_crianca: rgCrianca,
+            senha: "123A456E",
+        };
+        const response = await request(app).post('/api/responsaveis').send(novoResponsavel);
+
+        
+
+        expect(response.status).toBe(400);
+       
+    });
+
     afterEach(async () => {
         await db.query('DELETE FROM projeto_iessa.responsavel WHERE rg_responsavel = $1', [rgResponsavel]);
         await db.query('DELETE FROM projeto_iessa.crianca WHERE rg_crianca = $1', [rgCrianca]);

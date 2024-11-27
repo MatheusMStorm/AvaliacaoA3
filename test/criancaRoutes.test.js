@@ -19,11 +19,23 @@ describe('Testes de Integração para Rotas de Criança', () => {
             data_nasc: '2012-05-01'
         };
         const response = await request(app).post('/api/criancas').send(novaCrianca);
-
+        
         console.log("Resultado da criação de nova criança: " + response.body);
 
         expect(response.status).toBe(201);
         expect(response.body.nome_crianca).toBe('Marcos');
+    });
+
+    test('POST /api/criancas deve retornar erro 400', async () => {
+        const novaCrianca = {
+            rg_crianca: rgCrianca,
+            nome_crianca: 'Marcos',
+            idade_crianca: 4,
+            data_nasc: '2012-05-01'
+        };
+        const response = await request(app).post('/api/criancas').send(novaCrianca);
+
+        expect(response.status).toBe(400); 
     });
 
     afterEach(async () => {
