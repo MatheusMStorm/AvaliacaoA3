@@ -14,17 +14,27 @@ describe('Testes de Integração para Rotas de Matrícula', () => {
     test('POST /api/matriculas deve criar uma nova matrícula', async () => {
         const novaMatricula = {
             rg_crianca: "9883299000",
-            id_turma: 70
+            id_turma: 73
         };
         const response = await request(app).post('/api/matriculas').send(novaMatricula);
 
         console.log("Resposta da criação de matrícula:", response.body);
 
         expect(response.status).toBe(201);
-        expect(response.body.id_turma).toBe(70);
+        expect(response.body.id_turma).toBe(73);
 
         idMatricula = response.body.id_matricula;
         expect(idMatricula).toBeDefined();
+    });
+
+    test('POST /api/matriculas deve retornar erro 404', async () => {
+        const novaMatricula = {
+            rg_crianca: "198819592",
+            id_turma: 73
+        };
+        const response = await request(app).post('/api/matriculas').send(novaMatricula);
+
+        expect(response.status).toBe(404);
     });
 
     afterEach(async () => {
