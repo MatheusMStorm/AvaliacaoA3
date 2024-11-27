@@ -14,7 +14,8 @@ const responsavelController = {
   createResponsavel: async (req, res) => {
     const { rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha } = req.body;
 
-    verificarSenha(senha, res);
+    const verificaSenha = await verificarSenha(senha, res);
+    if (verificaSenha) return;
     try {
       const novoResponsavel = await criarResponsavel(rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha);
       res.status(201).json(novoResponsavel);
