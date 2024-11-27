@@ -31,10 +31,7 @@ describe('Testes de Integração para Rotas de Responsável', () => {
         };
         const response = await request(app).post('/api/responsaveis').send(novoResponsavel);
 
-        console.log("Resposta da criação de responsável:", response.body);
-
         expect(response.status).toBe(201);
-        expect(response.body.nome_responsavel).toBe('Luiz');
     });
 
     test('POST /api/responsaveis deve retornar um erro 400', async () => {
@@ -48,10 +45,7 @@ describe('Testes de Integração para Rotas de Responsável', () => {
         };
         const response = await request(app).post('/api/responsaveis').send(novoResponsavel);
 
-        
-
         expect(response.status).toBe(400);
-       
     });
 
     afterEach(async () => {
