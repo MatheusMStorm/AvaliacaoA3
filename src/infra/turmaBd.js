@@ -3,9 +3,9 @@ const Turma = require('../models/entity/turma.js');
 
 const getTurmas = async () => {
     let turmas = [];
-    const res = await pool.query('SELECT turno_turma, horario_turma, rg_instrutor, numero_alunos FROM projeto_iessa.turma');
+    const res = await pool.query('SELECT id_turma, turno_turma, horario_turma, rg_instrutor, numero_alunos FROM projeto_iessa.turma');
     res.rows.forEach(row => {
-        let turma = new Turma(row.turno_turma, row.horario_turma, row.rg_instrutor, row.numero_alunos);
+        let turma = new Turma(row.id_turma,row.turno_turma, row.horario_turma, row.rg_instrutor, row.numero_alunos);
         turmas.push(turma);
     });
     return turmas;
