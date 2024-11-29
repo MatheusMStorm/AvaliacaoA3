@@ -1,6 +1,13 @@
 const pool = require('../config/conexao.js');
 const Turma = require('../models/entity/turma.js');
 
+/**
+ * Retorna a lista de todas as turmas.
+ * 
+ * @returns {Turma[]} - Lista de turmas.
+ * 
+ * @throws {Error} - Se houver um erro ao obter lista de turmas.
+ */
 const getTurmas = async () => {
     let turmas = [];
     const res = await pool.query('SELECT id_turma, turno_turma, horario_turma, rg_instrutor, numero_alunos FROM projeto_iessa.turma');
@@ -11,6 +18,17 @@ const getTurmas = async () => {
     return turmas;
 };
 
+/**
+ * Cria um novo registro de turma no banco de dados.
+ * 
+ * @param {string} turno_turma - Turno da turma.
+ * @param {string} horario_turma - Horário da turma.
+ * @param {string} rg_instrutor - RG do instrutor responsável pela turma.
+ * 
+ * @returns {Turma} - Objeto Turma recém-criado.
+ * 
+ * @throws {Error} - Se a consulta ao banco de dados falhar.
+ */
 const createTurma = async (turno_turma, horario_turma, rg_instrutor) => {
     const res = await pool.query(
         'INSERT INTO projeto_iessa.turma (turno_turma, horario_turma, rg_instrutor) VALUES ($1, $2, $3) RETURNING *',
@@ -22,6 +40,14 @@ const createTurma = async (turno_turma, horario_turma, rg_instrutor) => {
     return turma;
 };
 
+/**
+ * Conta o número de alunos na turma especificada.
+ * 
+ * @param {Number} id_turma - ID da turma.
+ * @returns {Number} - Número de alunos na turma.
+ * 
+ * @throws {Error} - Se a consulta ao banco de dados falhar.
+ */
 const contarAlunosNaTurma = async (id_turma) => {
     try {
       const result = await pool.query('SELECT numero_alunos FROM projeto_iessa.turma WHERE id_turma = $1', [id_turma]);

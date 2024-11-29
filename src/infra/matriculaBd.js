@@ -1,6 +1,10 @@
 const pool = require('../config/conexao.js');
 const Matricula = require('../models/entity/matricula.js')
 
+/**
+ * Retorna lista de matrículas.
+ * @returns {Array.<Matricula>} - Lista de matr culas.
+ */
 const getMatriculas = async () => {
     let matriculas = [];
     const res = await pool.query('SELECT id_matricula, rg_crianca, id_turma FROM projeto_iessa.matricula');
@@ -11,6 +15,14 @@ const getMatriculas = async () => {
     return matriculas;
 };
 
+/**
+ * Cria um novo registro de matrícula no banco de dados e atualiza o número de alunos na turma especificada.
+ *
+ * @param {String} rg_crianca - RG da criança a ser matriculada.
+ * @param {Number} id_turma - ID da turma onde a criança será matriculada.
+ * @returns {Matricula} - O objeto Matricula recém-criado.
+ * @throws {Error} - Se a consulta ao banco de dados falhar.
+ */
 const createMatricula = async (rg_crianca, id_turma) => {
   const res = await pool.query(
     'INSERT INTO projeto_iessa.matricula (rg_crianca, id_turma) VALUES ($1, $2) RETURNING *',
