@@ -37,6 +37,16 @@ describe('Testes de Integração para Rotas de Matrícula', () => {
         expect(response.status).toBe(404);
     });
 
+    test('POST /api/matriculas deve retornar erro 400', async () => {
+        const novaMatricula = {
+            rg_crianca: "9883299000",
+            id_turma: 70
+        };
+        const response = await request(app).post('/api/matriculas').send(novaMatricula);
+
+        expect(response.status).toBe(400); 
+    });
+
     afterEach(async () => {
         if (idMatricula) {
             await db.query('DELETE FROM projeto_iessa.matricula WHERE id_matricula = $1', [idMatricula]);
