@@ -12,7 +12,7 @@ const getInstrutores = async () => {
 };
 
 const createInstrutor = async (rg_instrutor, nome_instrutor) => {
-    const res = await pool.query(
+    await pool.query(
         'INSERT INTO projeto_iessa.instrutor (rg_instrutor, nome_instrutor) VALUES ($1, $2) RETURNING *',
         [rg_instrutor, nome_instrutor]
     );

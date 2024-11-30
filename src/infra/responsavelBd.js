@@ -12,7 +12,7 @@ const getResponsaveis = async () => {
 };
 
 const createResponsavel = async (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha) => {
-    const res = await pool.query(
+    await pool.query(
         'INSERT INTO projeto_iessa.responsavel (rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
         [rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha]
     );
