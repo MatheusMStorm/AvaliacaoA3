@@ -1,12 +1,6 @@
 const { findInstrutores, criarInstrutor } = require('../models/services/instrutorService');
 
 const instrutorController = {
-  /**
-   * Retorna a lista de todos os instrutores.
-   * @param {Object} req - Requisição da rota.
-   * @param {Object} res - Resposta da rota.
-   * @returns {Promise} Lista de instrutores.
-   */
   getInstrutores: async (req, res) => {
     try {
       const instrutores = await findInstrutores();
@@ -17,14 +11,6 @@ const instrutorController = {
     }
   },
 
-  /**
-   * Cria um novo instrutor.
-   * @param {Object} req - Requisi o da rota.
-   * @param {Object} res - Resposta da rota.
-   * @param {string} req.body.rg_instrutor - RG do instrutor.
-   * @param {string} req.body.nome_instrutor - Nome do instrutor.
-   * @returns {Promise} O novo instrutor criado.
-   */
   createInstrutor: async (req, res) => {
     const { rg_instrutor, nome_instrutor } = req.body;
     try {

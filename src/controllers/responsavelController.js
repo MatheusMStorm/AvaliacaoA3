@@ -1,12 +1,7 @@
 const { findResponsaveis, criarResponsavel, verificarSenha } = require('../models/services/responsavelService');
 
 const responsavelController = {
-  /**
-   * Retorna a lista de todos os responsáveis.
-   * @param {Object} req - Requisição da rota.
-   * @param {Object} res - Resposta da rota.
-   * @returns {Promise} Lista de responsáveis.
-   */
+
   getResponsaveis: async (req, res) => {
     try {
       const responsaveis = await findResponsaveis();
@@ -17,18 +12,6 @@ const responsavelController = {
     }
   },
 
-  /**
-   * Cria um novo responsável.
-   * @param {Object} req - Requisição da rota.
-   * @param {Object} res - Resposta da rota.
-   * @param {string} req.body.rg_responsavel - Número do RG do responsável.
-   * @param {string} req.body.nome_responsavel - Nome do responsável.
-   * @param {string} req.body.endereco - Endereço do responsável.
-   * @param {string} req.body.graupa_responsavel - Grau de parentesco com a criança.
-   * @param {string} req.body.rg_crianca - Número do RG da criança.
-   * @param {string} req.body.senha - Senha para login.
-   * @returns {Promise} - O novo responsável criado.
-   */
   createResponsavel: async (req, res) => {
     const { rg_responsavel, nome_responsavel, endereco, graupa_responsavel, rg_crianca, senha } = req.body;
 

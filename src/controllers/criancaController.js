@@ -1,16 +1,6 @@
 const { findCriancas, criarCrianca, verificarIdade } = require('../models/services/criancaService.js');
 
 const criancaController = {
-  /**
-   * Retorna a lista de todas as crianças.
-   * 
-   * @param {Object} req - Requisição HTTP.
-   * @param {Object} res - Resposta HTTP.
-   * 
-   * @returns {Object[]} - Lista de crianças.
-   * 
-   * @throws {Error} - Se houver um erro ao obter lista de crianças.
-   */
   getCriancas: async (req, res) => {
     try {
       const criancas = await findCriancas();
@@ -21,21 +11,6 @@ const criancaController = {
     }
   },
 
-  /**
-   * Cria uma nova criança.
-   * 
-   * @param {Object} req - Requisição HTTP.
-   * @param {Object} res - Resposta HTTP.
-   * 
-   * @prop {string} req.body.rg_crianca - Número do RG da criança.
-   * @prop {string} req.body.nome_crianca - Nome da criança.
-   * @prop {number} req.body.idade_crianca - Idade da criança.
-   * @prop {string} req.body.data_nasc - Data de nascimento da criança (formato: 'YYYY-MM-DD').
-   * 
-   * @returns {Object} - Criança criada.
-   * 
-   * @throws {Error} - Se houver um erro ao criar a criança.
-   */
   createCrianca: async (req, res) => {
     const { rg_crianca, nome_crianca, idade_crianca, data_nasc } = req.body;
 
