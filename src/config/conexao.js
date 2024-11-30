@@ -9,8 +9,4 @@ const pool = new Pool({
   port: process.env.DB_PORT
 });
 
-pool.on('error', () => {
-  console.log('Erro na conexão com o banco de dados.');
-});
-
 module.exports = pool;
